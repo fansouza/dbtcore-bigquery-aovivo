@@ -1,1 +1,1 @@
-# dbtcore-igquery-aovivo
+# dbtcore-bigquery-aovivo
