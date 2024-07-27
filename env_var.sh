@@ -1,0 +1,10 @@
+export DBT_PROJECT=dbt-bigquery-aovivo-430618
+export DBT_DATASET=dataset_dbtworkshop
+export DBT_KEYFILE_PATH=C:\\Users\\fanso\\.chaves\\keyfile.json
+export DBT_LOCATION=US
+export DBT_METHOD=service-account
+export DBT_PRIORITY=interactive
+export DBT_THREADS=1
+export DBT_JOB_TIMEOUT=300
+export DBT_JOB_RETRIES=1
+export DBT_PROFILES_DIR=C:\\Projetos\\dbtcore-bigquery-aovivo
