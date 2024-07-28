@@ -24,7 +24,7 @@ renamed as (
         {{dbt_utils.generate_surrogate_key(['id', 'sku'])}} as supply_uuid,
 
         ---------- booleans
-        cents_to_dollars('cost') as supply_cost
+        {{cents_to_dollars('cost')}} as supply_cost
 
     from source
 
