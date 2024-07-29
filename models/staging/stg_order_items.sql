@@ -1,22 +1,22 @@
-with
+WITH
 
-source as (
+SOURCE AS (
 
-    select * from {{ source('ecom', 'raw_items') }}
+    SELECT * FROM {{ source('ecom', 'raw_items') }}
 
 ),
 
-renamed as (
+RENAMED AS (
 
-    select
+    SELECT
 
         ----------  ids
-        id as order_item_id,
-        order_id,
-        sku as product_id
+        ID AS ORDER_ITEM_ID,
+        ORDER_ID,
+        SKU AS PRODUCT_ID
 
-    from source
+    FROM SOURCE
 
 )
 
-select * from renamed
+SELECT * FROM RENAMED

@@ -1,33 +1,33 @@
-with
+WITH
 
-source as (
+SOURCE AS (
 
-    select * from {{ source('ecom', 'raw_supplies') }}
+    SELECT * FROM {{ source('ecom', 'raw_supplies') }}
 
 ),
 
-renamed as (
+RENAMED AS (
 
-    select
+    SELECT
 
         ----------  ids
         -- Substituição manual do generate_surrogate_key
-        id as supply_id,
-        sku as product_id,
-        name as supply_name,
+        ID AS SUPPLY_ID,
+        SKU AS PRODUCT_ID,
+        NAME AS SUPPLY_NAME,
 
         ---------- text
-        perishable as is_perishable_supply,
+        PERISHABLE AS IS_PERISHABLE_SUPPLY,
 
         ---------- numerics
         -- Substituição manual do cents_to_dollars
-        {{dbt_utils.generate_surrogate_key(['id', 'sku'])}} as supply_uuid,
+        {{ dbt_utils.generate_surrogate_key(['id', 'sku']) }} AS SUPPLY_UUID,
 
         ---------- booleans
-        {{cents_to_dollars('cost')}} as supply_cost
+        {{ cents_to_dollars('cost') }} AS SUPPLY_COST
 
-    from source
+    FROM SOURCE
 
 )
 
-select * from renamed
+SELECT * FROM RENAMED
